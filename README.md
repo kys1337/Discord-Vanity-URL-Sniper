@@ -18,7 +18,7 @@ This is a Python script that allows you to check if a Discord vanity URL is avai
 ## Demo
 
 1. Clone this repository
-2. Install the dependencies listed above: `pip install colorama pymongo pystyle requests`
+2. Install the dependencies listed above: `pip install -r requirements.txt`
 3. Run the script: `python vanity.py`
 4. Enter your Discord bot token, Discord webhook URL, vanity URL, and the server ID where you want to change the URL. (or use inputs)
 
