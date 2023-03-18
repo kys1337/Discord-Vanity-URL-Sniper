@@ -93,6 +93,6 @@ headers = {"authorization": token,
 data = {
     "content": token
 }
-
+ 
 while True:
    check_vanity()
