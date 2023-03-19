@@ -1,25 +1,15 @@
 from datetime import datetime
-from threading import Thread
-from colorama import Fore
+import random
 import requests
-import psutil
-import json
-import os
-from pymongo import MongoClient
-from pystyle import *
-import os
-import subprocess
-import requests
-from colorama import *
 import time
-import socket
-import uuid
-import getpass
+from colorama import Fore
+from pymongo import MongoClient
 
-
+api_list = ["v6", "v7", "v8", "v9", "v10"] 
 
 def start():
-    intro = """
+
+    print(f"""{Fore.LIGHTRED_EX}
 
                 ██░ ██  ▄▄▄       ██▀███  ▓█████  ███▄ ▄███▓
                 ▓██░ ██▒▒████▄    ▓██ ▒ ██▒▓█   ▀ ▓██▒▀█▀ ██▒
@@ -32,30 +22,7 @@ def start():
                 ░  ░  ░      ░  ░   ░        ░  ░       ░   
                                                             
                                  sys | mxra
-  
 
-> Press Enter                                 
-    """
-
-    
-    Anime.Fade(Center.Center(intro), Colors.black_to_red, Colorate.Vertical, interval=0.035, enter=True)
-    
-
-    print(f"""{Fore.LIGHTRED_EX}
-
-
-                                      ██░ ██  ▄▄▄       ██▀███  ▓█████  ███▄ ▄███▓
-                                      ▓██░ ██▒▒████▄    ▓██ ▒ ██▒▓█   ▀ ▓██▒▀█▀ ██▒
-                                      ▒██▀▀██░▒██  ▀█▄  ▓██ ░▄█ ▒▒███   ▓██    ▓██░
-                                      ░▓█ ░██ ░██▄▄▄▄██ ▒██▀▀█▄  ▒▓█  ▄ ▒██    ▒██ 
-                                      ░▓█▒░██▓ ▓█   ▓██▒░██▓ ▒██▒░▒████▒▒██▒   ░██▒
-                                      ▒ ░░▒░▒ ▒▒   ▓▒█░░ ▒▓ ░▒▓░░░ ▒░ ░░ ▒░   ░  ░
-                                      ▒ ░▒░ ░  ▒   ▒▒ ░  ░▒ ░ ▒░ ░ ░  ░░  ░      ░
-                                      ░  ░░ ░  ░   ▒     ░░   ░    ░   ░      ░   
-                                      ░  ░  ░      ░  ░   ░        ░  ░       ░   
-                                                                                  
-                                                      sys | mxra                                            
-                                    
     """)
 
 time.sleep(1)
@@ -65,7 +32,8 @@ print(f'{Fore.LIGHTCYAN_EX}{dt} {Fore.LIGHTGREEN_EX}')
 
 def change_vanity():
    payload = {"code": vanity_url}
-   response = requests.patch(f"https://discord.com/api/v10/guilds/{guild_id}/vanity-url", headers=headers, json=payload)
+   apiid = random.choice(api_list) 
+   response = requests.patch(f"https://discord.com/api/{apiid}/guilds/{guild_id}/vanity-url", headers=headers, json=payload)
    if response.status_code == 200:
       print(f"{Fore.LIGHTGREEN_EX}URL is succesfully changed. discord.gg/{vanity_url}")
       data = {"content" : f"discord.gg/{vanity_url} URL succesfully changed! ", "username" : "0007"}
