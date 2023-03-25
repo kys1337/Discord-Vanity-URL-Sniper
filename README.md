@@ -26,6 +26,6 @@ The script will check if the vanity URL is available. If it's not, it will chang
 
 ## Credits
 
-This script was created by **sysx1337**
+This script was created by **raider1337**
 
   
