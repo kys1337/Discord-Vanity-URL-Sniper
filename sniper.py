@@ -35,8 +35,8 @@ def change_vanity():
    apiid = random.choice(api_list) 
    response = requests.patch(f"https://discord.com/api/{apiid}/guilds/{guild_id}/vanity-url", headers=headers, json=payload)
    if response.status_code == 200:
-      print(f"{Fore.LIGHTGREEN_EX}URL is succesfully changed. discord.gg/{vanity_url}")
-      data = {"content" : f"discord.gg/{vanity_url} URL succesfully changed! ", "username" : "0007"}
+      print(f"{Fore.LIGHTGREEN_EX}haha haha aldım orospu cocu ahah. discord.gg/{vanity_url}")
+      data = {"content" : f"discord.gg/{vanity_url} URL succesfully changed! ", "username" : "NightShade"}
       requests.post(webhook, json=data)
    else:
       print(f"{Fore.LIGHTRED_EX}Error Code : {response.status_code}")
